@@ -1,37 +1,31 @@
 
-function printableMessage()
-{
+function printableMessage() {
 	var message = 'hello';
 
-	function getMessage()
-	{
+	function getMessage() {
 		return message;
 	}
 
-	function setMessage(newMessage)
-	{
-		if(!newMessage)
-		{
+	function setMessage(newMessage) {
+		if(!newMessage) {
 			throw new Error('Cannot set empty message!');
 		}
-
 		message = newMessage;
 	}
 
-	function printMessage()
-	{
+	function printMessage() {
 		console.log(message);
 	}
 
 	return {
-
 		setMessage: setMessage,
 		getMessage: getMessage,
 		printMessage: printMessage
 	};
 }
 
-// Pattern in use
+// revealing module pattern in use
+
 var awesome1 = printableMessage();
 awesome1.printMessage(); // hello
 
